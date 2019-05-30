@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Word Counter!</title>
+        <style>
+            .title {
+                text-align: center;
+                font-size: 50px;
+            }
+            .total {
+                text-align: center;
+                font-size: 20px;
+            }
+            .input {
+                text-align:center;
+            }
+            .output {
+                text-align: center;
+            }
+            .home {
+                text-align: center;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="title">
+            <h1>Word Counter!</h1>
+        </div>
+
+        <div class="total">
+            <h3>입력받은 문장의 총 단어 수는 <!--total-->"{{  total  }}개"입니다.</h3>
+        </div>
+        <br>
+
+        <div class="input">
+            <h3>< 입력받은 문장 ></h3>
+            <!--fulltext-->
+            {{  fulltext  }}
+        </div>
+        <br>
+
+        <div class="output">
+            <h3>< 단어의 개수 ></h3>
+            <!--word >> 개수-->
+            {% for word,count in dictionary %}
+                {{  word }}  >>  {{  count  }}  <!--선언된 변수는 dictionary에 있는 key, value-->
+                <br>
+            {% endfor %}
+        </div>
+        <br><br>
+
+        <div class="home">
+            <a href="{% url 'home' %}">>>again<<</a>
+        </div>
+    </body>
+</html>

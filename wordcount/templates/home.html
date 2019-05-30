@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Word Counter!</title>
+        <style>
+            .title {
+                text-align: center;
+                font-size: 50px;
+            }
+            .count {
+                background-color: aqua;
+                margin:30px 50px;
+                padding:30px 500px;
+            }
+            .about_url {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="title">
+            <h1>Word Counter!</h1>
+        </div>
+
+        <div class="about_url">
+            <a href="{% url 'about' %}">about</a>
+        </div>
+
+        <div class="count">
+            <form action="{% url 'count' %}">
+                <input type="text" style='width: 400px; height: 150px;' name='fulltext'>
+            <div class="button">
+                <input type="submit" value="count!">
+            </div>
+            </form>   
+        </div>
+
+    </body>
+</html>
